@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'app_Our_team_list' %}">
+    Our_team Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="full_name">full_name: </label>
+      <input class="form-control col-sm-10"'
+         id="full_name" type="text"
+         name="full_name" value="{{ object.full_name }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="image">image: </label>
+      <input class="form-control col-sm-10"'
+         id="image" type="file"
+         name="image" value="{{ object.image }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="age">age: </label>
+      <input class="form-control col-sm-10"'
+         id="age" type="number"
+         name="age" value="{{ object.age }}">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="information">information: </label>
+      <input class="form-control col-sm-10"'
+         id="information" type="text"
+         name="information" value="{{ object.information }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

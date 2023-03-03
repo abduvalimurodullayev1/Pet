@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'app_Service_list' %}">
+    Service Listing
+    </a>
+</p>
+    
+<table class="table">
+    <tr><td>description</td><td>{{ object.description }}</td></tr>
+    <tr><td>last_updated</td><td>{{ object.last_updated }}</td></tr>
+    <tr><td>imege</td><td>{{ object.imege }}</td></tr>
+    <tr><td>service_title</td><td>{{ object.service_title }}</td></tr>
+    <tr><td>created</td><td>{{ object.created }}</td></tr>
+</table>
+<a class="btn btn-primary" href="{{object.get_update_url}}">Edit</a>
+
+{% endblock %}
